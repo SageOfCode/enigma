@@ -7,4 +7,9 @@ class ShiftTest < Minitest::Test
     assert_equal 170920, shift.date
     assert_equal 57132, shift.offset
   end
+
+  def test_it_can_find_the_keys
+    shift = Shift.new(170920, 57132)
+    assert_equal ["57", "71", "13", "32"], shift.find_keys("57132")
+  end
 end
