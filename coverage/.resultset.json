@@ -1,0 +1,30 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "/Users/sagefreeman-gonzales/turing/enigma/lib/enigma.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/sagefreeman-gonzales/turing/enigma/lib/shift.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1600450890
+  }
+}

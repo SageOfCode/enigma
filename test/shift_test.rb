@@ -1,7 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require './lib/enigma'
-require './lib/shift'
+require './test/test_helper'
 
 class ShiftTest < Minitest::Test
   def test_it_has_attributes
