@@ -5,4 +5,8 @@ class Enigma
     @offset = offset
     @message = message
   end
+
+  def alphabet
+    ("a".."z").to_a << " "
+  end
 end

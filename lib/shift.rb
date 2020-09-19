@@ -39,5 +39,4 @@ class Shift
       keys + offset
     end
   end
-  
 end
