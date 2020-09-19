@@ -27,8 +27,13 @@ class ShiftTest < Minitest::Test
   def test_it_knows_the_date_code
     shift = Shift.new
     shift.stubs(:date_of_today).returns(190920)
-    expected = ["6400"]
-    assert_equal expected, shift.date_code
+    assert_equal ["6", "4", "0", "0"], shift.date_code
   end
 
+  def test_it_can_find_the_offset
+    shift = Shift.new
+    shift.stubs(:date_code).returns(["6", "4", "0", "0"])
+    expected = {"A" => 6, "B" => 4, "C" => 0, "D" => 0}
+    assert_equal expected, shift.create_offset
+  end
 end

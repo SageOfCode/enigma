@@ -23,8 +23,14 @@ class Shift
 
   def date_code
     date_squared = date_of_today ** 2
-    date_squared.to_s[-4..-1].split
+    date_squared.to_s[-4..-1].split("")
   end
 
-
+  def create_offset
+    number_values = date_code.map do |number|
+      number.to_i
+    end
+    letter_keys = ("A".."D").to_a
+    Hash[(letter_keys).zip(number_values)]
+  end
 end
