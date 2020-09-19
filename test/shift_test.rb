@@ -2,15 +2,18 @@ require './test/test_helper'
 
 class ShiftTest < Minitest::Test
   def test_it_has_attributes
-    shift = Shift.new(170920, 57132)
+    shift = Shift.new
     assert_instance_of Shift, shift
-    assert_equal 170920, shift.date
-    assert_equal 57132, shift.offset
   end
 
-  def test_it_can_find_the_keys
-    skip
-    shift = Shift.new(170920, 57132)
-    assert_equal ["57", "71", "13", "32"], shift.find_keys("57132")
+  def test_knows_the_date
+    shift = Shift.new
+    assert_equal (180920), shift.date_of_today
+  end
+
+  def test_it_knows_keys
+    shift = Shift.new
+    shift.stubs(:generate_number).returns("2740")
+    assert_equal ["02", "27", "74", "40"], shift.create_keys
   end
 end
