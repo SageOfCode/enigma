@@ -1,10 +1,7 @@
+require_relative '../lib/shift'
+require_relative '../lib/encrypt'
+
 class Enigma
-  attr_reader :date, :offset, :message
-  def initialize
-    @date = date
-    @offset = offset
-    @message = message
-  end
 
   def alphabet
     ("a".."z").to_a << " "
