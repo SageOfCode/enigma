@@ -9,7 +9,7 @@ class Shift
 
 #---------------Key
 def find_keys(key)
-  key.chars.map do |char|
+  key.chars.find_index(1) do |char|
     char.to_i
   end
 end

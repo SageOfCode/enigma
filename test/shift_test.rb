@@ -9,6 +9,7 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_can_find_the_keys
+    skip
     shift = Shift.new(170920, 57132)
     assert_equal ["57", "71", "13", "32"], shift.find_keys("57132")
   end
