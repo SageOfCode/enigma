@@ -1,4 +1,4 @@
-class Shift
+module Shiftable
 
   def generate_number
     rand(99999).to_s

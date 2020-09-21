@@ -1,4 +1,7 @@
+require './lib/shiftable'
+
 class Encrypt
+  include Shiftable
 
   def alphabet
     ("a".."z").to_a << " "
