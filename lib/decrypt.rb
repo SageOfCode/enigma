@@ -10,7 +10,7 @@ message.close
 
 enigma = Enigma.new
 
-encrypted_text = enigma.decrypt(incoming_text, "02715", "040895")
+encrypted_text = enigma.decrypt(incoming_text, ARGV[2], ARGV[3])
 
 writer = File.open(ARGV[1], "w")
 
