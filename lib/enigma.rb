@@ -9,6 +9,7 @@ class Enigma
     @encrypting = Encrypting.new
     @decrypting = Decrypting.new
     @encryption_info = Hash.new
+    @decryption_info = Hash.new
 
   end
 
@@ -23,6 +24,10 @@ class Enigma
   end
 
   def decrypt(message, code, date)
+    @decryption_info[:message] = message
+    @decryption_info[:date] = date
+    @decryption_info[:code] = code
+    @decryption_info
     @decrypting.rotate_letters(message, code, date)
-  end
+  end 
 end
