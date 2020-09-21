@@ -6,7 +6,7 @@ class Encrypt
 
   def break_up(message)
     split_words = []
-    message.chars.each_slice(4).with_index do |array_of_four|
+    message.chars.each_slice(4) do |array_of_four|
       split_words << array_of_four
     end
     split_words
@@ -14,17 +14,24 @@ class Encrypt
 
   def rotate_letters(message, shift)
     array_of_shifted = []
-    message.map do |snippet|
-      a_shift = alphabet.find_index(snippet[0])
+    message.each do |a,b,c,d|
+      next unless a != nlil
+      a_shift = alphabet.find_index(a)
         start_a_shift = alphabet.rotate(a_shift)
         array_of_shifted << start_a_shift.rotate(shift["A"]).first
-      b_shift = alphabet.find_index(snippet[1])
+
+      next unless b != nil
+      b_shift = alphabet.find_index(b)
         start_b_shift = alphabet.rotate(b_shift)
         array_of_shifted << start_b_shift.rotate(shift["B"]).first
-      c_shift = alphabet.find_index(snippet[2])
+
+      next unless c != nil
+      c_shift = alphabet.find_index(c)
         start_c_shift = alphabet.rotate(c_shift)
         array_of_shifted << start_c_shift.rotate(shift["C"]).first
-      d_shift = alphabet.find_index(snippet[3])
+
+      next unless d != nil
+      d_shift = alphabet.find_index(d)
         start_d_shift = alphabet.rotate(d_shift)
         array_of_shifted << start_d_shift.rotate(shift["D"]).first
     end

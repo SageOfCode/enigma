@@ -26,5 +26,9 @@ class EncryptTest < Minitest::Test
     expected = "yqmjfbgs"
     message = [["s", "a", "g", "e"], [" ", "m", "a", "n"]]
     assert_equal expected, encrypt.rotate_letters(message, shift)
+
+    expected_2 = "yqmjfbgsmd"
+    message_2 = [["s", "a", "g", "e"], [" ", "m", "a", "n"], ["g", "o"]]
+    assert_equal expected_2, encrypt.rotate_letters(message_2, shift)
   end
 end
