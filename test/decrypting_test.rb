@@ -19,16 +19,12 @@ class DecryptingTest < Minitest::Test
     expected = [["y", "q", "m", "j"], ["f", "b", "g", "s"], ["m", "d"]]
     assert_equal expected, decrypt.break_up(message)
   end
-#
-#   def test_it_can_rotate_letters
-#     decrypt = Decrypting.new
-#     shift = {"A" => 6, "B" => 70, "C" => 6, "D" => 5}
-#     expected = "yqmjfbgs"
-#     message = [["s", "a", "g", "e"], [" ", "m", "a", "n"]]
-#     assert_equal expected, decrypt.rotate_letters(message, shift)
-#
-#     expected_2 = "yqmjfbgsmd"
-#     message_2 = [["s", "a", "g", "e"], [" ", "m", "a", "n"], ["g", "o"]]
-#     assert_equal expected_2, decrypt.rotate_letters(message_2, shift)
-#   end
+
+  def test_it_can_rotate_letters
+    decrypt = Decrypting.new
+    shift = {"A" => 6, "B" => 70, "C" => 6, "D" => 5}
+    expected = "sage mango"
+    message = [["y", "q", "m", "j"], ["f", "b", "g", "s"], ["m", "d"]]
+    assert_equal expected, decrypt.rotate_letters(message, shift)
+  end
 end
