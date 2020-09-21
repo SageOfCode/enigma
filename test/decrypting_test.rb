@@ -22,9 +22,10 @@ class DecryptingTest < Minitest::Test
 
   def test_it_can_rotate_letters
     decrypt = Decrypting.new
-    shift = {"A" => 6, "B" => 70, "C" => 6, "D" => 5}
+    date = "092020"
+    code = "2741"
     expected = "sage mango"
-    message = [["y", "q", "m", "j"], ["f", "b", "g", "s"], ["m", "d"]]
-    assert_equal expected, decrypt.rotate_letters(message, shift)
+    message = "dlhhlxbqsz"
+    assert_equal expected, decrypt.rotate_letters(message, date, code)
   end
 end
