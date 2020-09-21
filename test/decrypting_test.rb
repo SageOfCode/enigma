@@ -13,12 +13,12 @@ class DecryptingTest < Minitest::Test
     assert_equal expected, decrypt.alphabet
   end
 
-#   def test_it_break_up_messages
-#     decrypt = Decrypting.new
-#     message = "Sage Mango"
-#     expected = [["S", "a", "g", "e"], [" ", "M", "a", "n"], ["g", "o"]]
-#     assert_equal expected, decrypt.break_up(message)
-#   end
+  def test_it_can_break_up_messages
+    decrypt = Decrypting.new
+    message = "yqmjfbgsmd"
+    expected = [["y", "q", "m", "j"], ["f", "b", "g", "s"], ["m", "d"]]
+    assert_equal expected, decrypt.break_up(message)
+  end
 #
 #   def test_it_can_rotate_letters
 #     decrypt = Decrypting.new
