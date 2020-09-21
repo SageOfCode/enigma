@@ -17,3 +17,5 @@ writer = File.open(ARGV[1], "w")
 writer.write(encrypted_text)
 
 writer.close
+
+puts "Created #{ARGV[1]} with the key #{enigma.decryption_info[:code]} and date #{enigma.decryption_info[:date]}"

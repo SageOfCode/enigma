@@ -4,7 +4,7 @@ require './lib/decrypting'
 require 'date'
 
 class Enigma
-  attr_reader :encryption_info
+  attr_reader :encryption_info, :decryption_info
   def initialize
     @encrypting = Encrypting.new
     @decrypting = Decrypting.new
@@ -29,5 +29,5 @@ class Enigma
     @decryption_info[:code] = code
     @decryption_info
     @decrypting.rotate_letters(message, code, date)
-  end 
+  end
 end
