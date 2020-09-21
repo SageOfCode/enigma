@@ -6,13 +6,13 @@ class DecryptingTest < Minitest::Test
     assert_instance_of Decrypting, decrypt
   end
 
-#   def test_it_knows_the_alphabet
-#     decrypt = Decrypting.new
-#     expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w",
-# "x", "y", "z", " "]
-#     assert_equal expected, decrypt.alphabet
-#   end
-#
+  def test_it_knows_the_alphabet
+    decrypt = Decrypting.new
+    expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w",
+"x", "y", "z", " "]
+    assert_equal expected, decrypt.alphabet
+  end
+
 #   def test_it_break_up_messages
 #     decrypt = Decrypting.new
 #     message = "Sage Mango"
