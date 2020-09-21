@@ -1,9 +1,13 @@
 require './lib/shiftable'
-require './lib/encrypt'
+require './lib/encrypting'
 
 class Enigma
-  def encrypt
+  def initialize
+    @encryting = Encrypting.new
+  end
 
+  def encrypt(message, code, date)
+    @encrypting.rotate_letters(message, code, date)
   end
 
 

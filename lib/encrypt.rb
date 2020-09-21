@@ -1,43 +1,19 @@
+require './lib/enigma'
+require './lib/encrypting'
 require './lib/shiftable'
 
-class Encrypt
-  include Shiftable
+message = File.open(ARGV[0], "r")
 
-  def alphabet
-    ("a".."z").to_a << " "
-  end
+incoming_text = message.read
 
-  def break_up(message)
-    split_words = []
-    message.chars.each_slice(4) do |array_of_four|
-      split_words << array_of_four
-    end
-    split_words
-  end
+message.close
 
-  def rotate_letters(message, shift)
-    array_of_shifted = []
-    message.each do |a,b,c,d|
-      next unless a != nlil
-      a_shift = alphabet.find_index(a)
-        start_a_shift = alphabet.rotate(a_shift)
-        array_of_shifted << start_a_shift.rotate(shift["A"]).first
+enigma = Enigma.new
 
-      next unless b != nil
-      b_shift = alphabet.find_index(b)
-        start_b_shift = alphabet.rotate(b_shift)
-        array_of_shifted << start_b_shift.rotate(shift["B"]).first
+encrypted_text = enigma.encrypt(incoming_text, "02715", "040895")
 
-      next unless c != nil
-      c_shift = alphabet.find_index(c)
-        start_c_shift = alphabet.rotate(c_shift)
-        array_of_shifted << start_c_shift.rotate(shift["C"]).first
+writer = File.open(ARGV[1], "w")
 
-      next unless d != nil
-      d_shift = alphabet.find_index(d)
-        start_d_shift = alphabet.rotate(d_shift)
-        array_of_shifted << start_d_shift.rotate(shift["D"]).first
-    end
-    array_of_shifted.join
-  end
-end
+writer.write(encrypted_text)
+
+writer.close

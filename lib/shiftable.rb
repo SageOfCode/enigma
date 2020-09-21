@@ -34,7 +34,7 @@ module Shiftable
     Hash[(letter_keys).zip(number_values)]
   end
 
-  def find_shift
+  def find_shift(date, code)
     create_keys.merge(create_offset) do |letter, keys, offset|
       keys + offset
     end
