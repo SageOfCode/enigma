@@ -10,7 +10,7 @@ message.close
 
 enigma = Enigma.new
 
-encrypted_text = enigma.encrypt(incoming_text, "2741", "092020")
+encrypted_text = enigma.encrypt(incoming_text)
 
 writer = File.open(ARGV[1], "w")
 
