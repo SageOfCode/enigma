@@ -4,7 +4,7 @@ require './lib/shiftable'
 
 message = File.open(ARGV[0], "r")
 
-incoming_text = message.read
+incoming_text = message.read.downcase
 
 message.close
 

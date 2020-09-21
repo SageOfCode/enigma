@@ -1,9 +1,10 @@
 require './lib/shiftable'
 require './lib/encrypting'
+require './lib/decrypting'
 
 class Enigma
   def initialize
-    @encryting = Encrypting.new
+    @encrypting = Encrypting.new
     @decrypting = Decrypting.new
   end
 
