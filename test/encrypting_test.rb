@@ -28,4 +28,13 @@ class EncryptingTest < Minitest::Test
     message = "sage mango"
     assert_equal expected, encrypt.rotate_letters(message, date, code)
   end
+
+  def test_it_can_pass_through_symbols
+    encrypt = Encrypting.new
+    date = "092020"
+    code = "2741"
+    expected = "!?.,"
+    message = "!?.,"
+    assert_equal expected, encrypt.rotate_letters(message, date, code)
+  end
 end
