@@ -37,10 +37,4 @@ class ShiftableTest < Minitest::Test
     expected = {"A" => 8, "B" => 31, "C" => 74, "D" => 40}
     assert_equal expected, shift.create_shift("2740", "190920")
   end
-
-  def test_it_can_find_shift_with_date_and_code
-    shift = Encrypting.new
-    expected = {"A"=>26, "B"=>96, "C"=>9, "D"=>92}
-    assert_equal expected, shift.create_shift("190920", "2740")
-  end
 end
