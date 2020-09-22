@@ -23,6 +23,6 @@ Mimics the enigma machine that Alan Turing was able to crack.
 
 > 3.5 Over 50 commits. Clear commit messages and pull request messages. Most commits cover a clear area of functionality.
 
-![alt text](https://ibb.co/8XFYcJS)
+![alt text](<a href="https://ibb.co/8XFYcJS"><img src="https://i.ibb.co/cxzYLP7/Screen-Shot-2020-09-21-at-11-10-08-PM.png" alt="Screen-Shot-2020-09-21-at-11-10-08-PM" border="0"></a>)
 
 ![alt text](https://media.giphy.com/media/1pA5l16w1t7qFR4ZAi/giphy.gif)
