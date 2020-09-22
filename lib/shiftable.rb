@@ -6,11 +6,11 @@ module Shiftable
     rand(99999).to_s.rjust(5, "0")
   end
 
-  def create_keys(code)
-    split_into_keys = code.rjust(5, "0")
+  def create_keys(key)
+    split_into_keys = key.rjust(5, "0")
     key_splits = [split_into_keys[0..1], split_into_keys[1..2], split_into_keys[2..3], split_into_keys[3..4]]
-    number_values = key_splits.map do |key|
-      key.to_i
+    number_values = key_splits.map do |num_key|
+      num_key.to_i
     end
     letter_keys = ("A".."D").to_a
     Hash[(letter_keys).zip(number_values)]
@@ -30,9 +30,9 @@ module Shiftable
     Hash[(letter_keys).zip(number_values)]
   end
 
-  def create_shift(code, date)
-    if code != nil
-      keys_with_code = create_keys(code)
+  def create_shift(key, date)
+    if key != nil
+      keys_with_code = create_keys(key)
     else
       keys_with_code = create_keys(generate_number)
     end
