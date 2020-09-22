@@ -17,19 +17,12 @@ class ShiftableTest < Minitest::Test
     expected = {"A"=>2, "B"=>27, "C"=>74, "D"=>40}
     assert_equal expected, shift.create_keys('2740')
   end
-#
-#   def test_it_can_create_keys
-#     shift = Encrypting.new
-#     shift.stubs(:create_keys).returns(["02", "27", "74", "40"])
-#     expected = {"A" => 2, "B" => 27, "C" => 74, "D" => 40}
-#     assert_equal expected, shift.assign_keys_to_keys
-#   end
-#
-#   def test_knows_the_date
-#     shift = Encrypting.new
-#     assert_equal 6, shift.date_of_today.length
-#   end
-#
+
+  def test_knows_the_date
+    shift = Encrypting.new
+    assert_equal 6, shift.date_of_today.length
+  end
+
 #   def test_it_knows_the_date_code
 #     shift = Encrypting.new
 #     shift.stubs(:date_of_today).returns(190920)
