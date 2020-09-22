@@ -12,19 +12,19 @@ class Enigma
   end
 
   def encrypt(message,
-              code = rand(99999).to_s,
+              key = rand(99999).to_s,
               date = Date.today.strftime("%d%m%y"))
-    @encrypting.rotate_letters(message, code, date)
-    @encryption_info[:encryption] = @encrypting.rotate_letters(message, code, date)
-    @encryption_info[:key] = code
+    @encrypting.rotate_letters(message, key, date)
+    @encryption_info[:encryption] = @encrypting.rotate_letters(message, key, date)
+    @encryption_info[:key] = key
     @encryption_info[:date] = date
     @encryption_info
   end
 
-  def decrypt(message, code, date)
-    @decrypting.rotate_letters(message, code, date)
-    @decryption_info[:decryption] = @decrypting.rotate_letters(message, code, date)
-    @decryption_info[:key] = code
+  def decrypt(message, key, date = Date.today.strftime("%d%m%y"))
+    @decrypting.rotate_letters(message, key, date)
+    @decryption_info[:decryption] = @decrypting.rotate_letters(message, key, date)
+    @decryption_info[:key] = key
     @decryption_info[:date] = date
     @decryption_info
   end

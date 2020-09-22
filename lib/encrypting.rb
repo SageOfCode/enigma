@@ -15,8 +15,8 @@ class Encrypting
     split_words
   end
 
-  def rotate_letters(message, code, date)
-    shift = create_shift(code, date)
+  def rotate_letters(message, key, date)
+    shift = create_shift(key, date)
     message_break = break_up(message)
     array_of_shifted = []
     message_break.each do |a,b,c,d|
