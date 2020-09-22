@@ -1,4 +1,3 @@
-require './lib/shiftable'
 require './lib/encrypting'
 require './lib/decrypting'
 require 'date'
@@ -10,7 +9,6 @@ class Enigma
     @decrypting = Decrypting.new
     @encryption_info = Hash.new
     @decryption_info = Hash.new
-
   end
 
   def encrypt(message,
@@ -24,10 +22,10 @@ class Enigma
   end
 
   def decrypt(message, code, date)
-    @decrypting.rotate_letters(message, code, date)
     @decryption_info[:decryption] = @decrypting.rotate_letters(message, code, date)
     @decryption_info[:key] = code
     @decryption_info[:date] = date
+    @decrypting.rotate_letters(message, code, date)
     @decryption_info
   end
 end
