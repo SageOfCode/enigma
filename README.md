@@ -22,3 +22,7 @@ Mimics the enigma machine that Alan Turing was able to crack.
 ### Version Control
 
 > 3.5 Over 50 commits. Clear commit messages and pull request messages. Most commits cover a clear area of functionality.
+
+![alt text](https://ibb.co/8XFYcJS)
+
+![alt text](https://gph.is/2WtOOy2)
