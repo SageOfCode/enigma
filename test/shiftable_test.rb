@@ -23,30 +23,24 @@ class ShiftableTest < Minitest::Test
     assert_equal 6, shift.date_of_today.length
   end
 
-#   def test_it_knows_the_date_code
-#     shift = Encrypting.new
-#     shift.stubs(:date_of_today).returns(190920)
-#     assert_equal ["6", "4", "0", "0"], shift.date_code
-#   end
-#
-#   def test_it_can_find_the_offset
-#     shift = Encrypting.new
-#     shift.stubs(:date_code).returns(["6", "4", "0", "0"])
-#     expected = {"A" => 6, "B" => 4, "C" => 0, "D" => 0}
-#     assert_equal expected, shift.create_offset
-#   end
-#
-#   def test_it_can_find_the_shift
-#     shift = Encrypting.new
-#     shift.stubs(:create_keys).returns({"A" => 2, "B" => 27, "C" => 74, "D" => 40})
-#     shift.stubs(:create_offset).returns({"A" => 6, "B" => 4, "C" => 0, "D" => 0})
-#     expected = {"A" => 8, "B" => 31, "C" => 74, "D" => 40}
-#     assert_equal expected, shift.find_shift
-#   end
-#
-#   def test_it_can_find_shift_with_date_and_code
-#   shift = Encrypting.new
-#   expected = {"A"=>26, "B"=>96, "C"=>9, "D"=>92}
-#   assert_equal expected, shift.create_shift("190920", "2740")
-#   end
+  def test_it_knows_the_date_code
+    shift = Encrypting.new
+    shift.stubs(:date_of_today).returns(190920)
+    expected = {"A"=>6, "B"=>4, "C"=>0, "D"=>0}
+    assert_equal expected, shift.create_offset("190920")
+  end
+
+  def test_it_can_find_the_shift
+    shift = Encrypting.new
+    shift.stubs(:create_keys).returns({"A" => 2, "B" => 27, "C" => 74, "D" => 40})
+    shift.stubs(:create_offset).returns({"A" => 6, "B" => 4, "C" => 0, "D" => 0})
+    expected = {"A" => 8, "B" => 31, "C" => 74, "D" => 40}
+    assert_equal expected, shift.create_shift("2740", "190920")
+  end
+
+  def test_it_can_find_shift_with_date_and_code
+    shift = Encrypting.new
+    expected = {"A"=>26, "B"=>96, "C"=>9, "D"=>92}
+    assert_equal expected, shift.create_shift("190920", "2740")
+  end
 end
