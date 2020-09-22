@@ -25,4 +25,4 @@ Mimics the enigma machine that Alan Turing was able to crack.
 
 ![alt text](https://ibb.co/8XFYcJS)
 
-![alt text](https://gph.is/2WtOOy2)
+![alt text](https://media.giphy.com/media/1pA5l16w1t7qFR4ZAi/giphy.gif)
