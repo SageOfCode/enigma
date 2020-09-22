@@ -22,10 +22,10 @@ class Enigma
   end
 
   def decrypt(message, code, date)
+    @decrypting.rotate_letters(message, code, date)
     @decryption_info[:decryption] = @decrypting.rotate_letters(message, code, date)
     @decryption_info[:key] = code
     @decryption_info[:date] = date
-    @decrypting.rotate_letters(message, code, date)
     @decryption_info
   end
 end
