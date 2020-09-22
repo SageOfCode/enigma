@@ -11,11 +11,12 @@ class ShiftableTest < Minitest::Test
     assert_equal 5, shift.generate_number.length
   end
 
-#   def test_it_knows_keys
-#     shift = Encrypting.new
-#     shift.stubs(:generate_number).returns("2740")
-#     assert_equal ["02", "27", "74", "40"], shift.create_keys
-#   end
+  def test_it_knows_keys
+    shift = Encrypting.new
+    shift.stubs(:generate_number).returns("2740")
+    expected = {"A"=>2, "B"=>27, "C"=>74, "D"=>40}
+    assert_equal expected, shift.create_keys('2740')
+  end
 #
 #   def test_it_can_create_keys
 #     shift = Encrypting.new
