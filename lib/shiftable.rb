@@ -3,7 +3,7 @@ require 'date'
 module Shiftable
 
   def generate_number
-    rand(99999).to_s
+    rand(99999).to_s.rjust(5, "0")
   end
 
   def create_keys(code)
