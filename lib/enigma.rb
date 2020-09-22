@@ -21,7 +21,7 @@ class Enigma
     @encryption_info
   end
 
-  def decrypt(message, key, date)
+  def decrypt(message, key, date = Date.today.strftime("%d%m%y"))
     @decrypting.rotate_letters(message, key, date)
     @decryption_info[:decryption] = @decrypting.rotate_letters(message, key, date)
     @decryption_info[:key] = key
