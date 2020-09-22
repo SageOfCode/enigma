@@ -28,4 +28,13 @@ class DecryptingTest < Minitest::Test
     message = "dlhhlxbqsz"
     assert_equal expected, decrypt.rotate_letters(message, date, code)
   end
+
+  def test_it_can_pass_through_symbols_also
+    decrypt = Decrypting.new
+    date = "092020"
+    code = "2741"
+    expected = "!?./"
+    message = "!?./"
+    assert_equal expected, decrypt.rotate_letters(message, date, code)
+  end
 end
