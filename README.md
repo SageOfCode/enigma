@@ -14,7 +14,7 @@ ruby lib/encrypt.rb message.txt altered.txt
 ruby lib/decrypt.rb altered.txt original.txt {key} {date}
 ```
 > You can name these files other names to encrypt and decrypt other messages.
-> You can also try adding your own key and date to the encrypt line to use your own instead of 
+> You can also try adding your own key and date to the encrypt line to use your own instead of the automatically generated ones.
 
 ## Information Flow 
 
