@@ -1,27 +1,20 @@
 # Enigma
 Mimics the enigma machine that Alan Turing was able to crack.
 
-## Self Assessment
+## How to Setup
 
-### Functionality
-
-> 3.0 Encrypt and Decrypt functionality are working as required
-
-### Object Oriented Programming
-
-> 4.0 Successfully implemented shiftable module that contains methods that are utilized by both the Encrypting and Decrypting classes.
-
-### Ruby Conventions and Mechanics
-
-> 3.5 Classes, methods, and variables do have descriptive names. Code is made with the reader in mind. Most efficient enumerables are used whenever possible.
-
-### Test Driven Development
-
-> 3.5 Reaches 100% coverage as reported by simplecov. Stubs are used when needed, and provide more robust coverage for testing.
-
-### Version Control
-
-> 3.5 Over 50 commits. Clear commit messages and pull request messages. Most commits cover a clear area of functionality.
+> In your terminal, navigate to a folder to hold this project and run the following commands:
+```
+git clone git@github.com:SageOfCode/enigma.git
+cd enigma
+ruby lib/encrypt.rb message.txt altered.txt
+```
+> This will give you a message with a key and date.
+```
+ruby lib/decrypt.rb altered.txt original.txt {key} {date}
+```
+> You can name these files other names to encrypt and decrypt other messages.
+> You can also try adding your own key and date to the encrypt line to use your own instead of 
 
 ## Information Flow 
 
